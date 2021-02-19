@@ -1,0 +1,21 @@
+# TODO: Add explanatory comments
+
+version: "3.8"
+
+services:
+  webapp:
+    build: .
+    image: vncsna/yaus
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/yaus
+  mongodb:
+    image: mongo:xenial
+    volumes:
+      - mongodb-volume:/data
+
+volumes:
+  mongodb-volume:

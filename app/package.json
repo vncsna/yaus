@@ -1,0 +1,27 @@
+{
+  "name": "yaus",
+  "version": "1.0.0",
+  "description": "yet another url shortener",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vncsna/yaus.git"
+  },
+  "author": "vncsna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vncsna/yaus/issues"
+  },
+  "homepage": "https://github.com/vncsna/yaus#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.15",
+    "shortid": "^2.2.16"
+  }
+}
