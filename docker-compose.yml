@@ -1,21 +1,56 @@
-# TODO: Add explanatory comments
-
+# Set docker-compose version, optional
 version: "3.8"
 
+# Create services
 services:
+  # Create webapp service
   webapp:
+    # Execute Dockerfile
     build: .
+    # Name the image
     image: vncsna/yaus
+    # Create this service after mongodb
     depends_on:
       - mongodb
+    # Map local port to container port
     ports:
       - "8080:8080"
+    # Create environment variable
     environment:
       - MONGO_URL=mongodb://mongodb:27017/yaus
+  # Create mongodb service
   mongodb:
+    # Set base image
     image: mongo:xenial
+    # Link volume created below
     volumes:
       - mongodb-volume:/data
 
+# Create volumes
 volumes:
   mongodb-volume:
+
+#########################################
+# Networking
+# From https://docs.docker.com/compose/networking/
+#
+# By default docker-compose sets up a single network.
+# And each container for a service is discoverable
+# at a hostname identical to the container name.
+# So mongodb is discoverable at hostname mongodb.
+#
+# You can define extra aliases by 
+# links:
+#   - mongodb:database
+#
+# What is a multi-host network?
+#
+# What can I do with custom networks?
+#
+# You can configure the default network.
+#########################################
+
+#########################################
+# Volumes
+# From https://docs.docker.com/storage/volumes/
+#########################################

@@ -1,15 +1,9 @@
 ## yaus
-yet another url shortener from [this](https://www.freecodecamp.org/news/mongodb-node-express-project/) tutorial.
+yet another url shortener learning project from [this](https://www.freecodecamp.org/news/mongodb-node-express-project/) tutorial
 
-## docker
-
-- `git clone ...`
-- `cd yaus`
-- `docker-compose up -d`
-- open `localhost:8080`
-- `docker-compose down`
-
-## todo
-
-- update interface
-- change core code
+## usage with docker
+- clone the repository `git clone https://github.com/vncsna/yaus.git`
+- change directory to app folder `cd yaus`
+- execute app with docker compose `docker-compose up -d`
+- open the web app `http://localhost:8080/`
+- stop and remove the containers `docker-compose down`
